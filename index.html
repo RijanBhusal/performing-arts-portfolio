@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Performing Arts Portfolio – Rijan Bhusal (EDU106)</title>
+  <meta name="description" content="Multilingual, multicultural, inclusive performing-arts portfolio for early childhood (music, dance & movement, drama), aligned to EYLF v2.0.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light">
+<header class="site-header">
+  <div class="container header-inner">
+    <div>
+      <h1>Performing Arts Portfolio</h1>
+      <p class="subtitle">Rijan Bhusal • EDU106 • Multilingual • Multicultural • Inclusive</p>
+    </div>
+    <div class="header-actions">
+      <button id="themeToggle" class="btn" aria-label="Toggle theme">🌗 Theme</button>
+      <button id="printBtn" class="btn" aria-label="Print / Save as PDF">🖨️ Export PDF</button>
+      <a class="btn link" id="downloadData" download="resources.json" href="#">⬇️ Data</a>
+    </div>
+  </div>
+</header>
+
+<nav class="toolbar container">
+  <div class="filters">
+    <span class="label">Filter:</span>
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="Music">Music</button>
+    <button class="chip" data-filter="Dance & Movement">Dance & Movement</button>
+    <button class="chip" data-filter="Drama">Drama</button>
+  </div>
+  <div class="search">
+    <input type="search" id="searchInput" placeholder="Search title, culture, tags…" aria-label="Search resources">
+  </div>
+</nav>
+
+<main class="container">
+  <section id="about" class="panel">
+    <h2>About this portfolio</h2>
+    <p>
+      This curated portfolio brings together 12 performing-arts resources (music, dance & movement, drama) designed for 
+      early childhood settings. Each card includes inclusion notes, use steps, adaptations, EYLF v2.0 links, an evaluation, and APA 7 references.
+      Use the filter and search to explore. Click a card to expand for details and embedded media.
+    </p>
+  </section>
+
+  <section id="wall" class="wall" aria-live="polite">
+    <!-- Cards injected by JS -->
+  </section>
+
+  <section id="reflection" class="panel">
+    <h2>Reflection (200–300 words)</h2>
+    <p id="reflectionText"></p>
+  </section>
+
+  <section id="references" class="panel">
+    <h2>Reference List (APA 7)</h2>
+    <ol id="refList"></ol>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>
+      Built by Rijan Bhusal for EDU106. Print-friendly & accessible. 
+      Host as a static site (e.g., GitHub Pages). Data editable inside this file (see JSON block).
+    </p>
+  </div>
+</footer>
+
+<!-- Data model: edit this JSON to update resources / reflection / references -->
+<script id="portfolio-data" type="application/json">
+{
+  "resources": [
+    {
+      "title": "Hello to All the Children of the World (Wee Sing)",
+      "mode": "Music",
+      "age": "3–6",
+      "culture": "Global / Multilingual",
+      "type": "Song",
+      "inclusion": ["Multilingual", "EAL/D-friendly", "Identity-affirming"],
+      "howto": ["Play and learn greetings in multiple languages", "Invite children to wave when they hear their home language; point to languages on a world map"],
+      "adaptations": ["Use picture cards of flags and greetings", "Slow/paused sections for repetition"],
+      "eylf": ["Outcome 1 (Identity)", "Outcome 5 (Communication)"],
+      "evaluation": "Validates home languages and builds belonging. Rhythm and repetition support phonological awareness and social confidence. Eases transitions and sets a welcoming tone for EAL/D learners.",
+      "reference": "Wee Sing. (2011). Hello to all the children of the world [Video]. YouTube. https://www.youtube.com/watch?v=Vf0sF9Y1G2E",
+      "media": {"type":"youtube","url":"https://www.youtube.com/embed/Vf0sF9Y1G2E"}
+    },
+    {
+      "title": "Frère Jacques – Multilingual Round",
+      "mode": "Music",
+      "age": "4–8",
+      "culture": "France / Global",
+      "type": "Song / Round",
+      "inclusion": ["Multilingual", "Peer teaching", "Working memory"],
+      "howto": ["Teach melody, then 2-part round", "Invite a verse in each child’s home language"],
+      "adaptations": ["Lyric cards with simple icons", "Small groups for part-singing"],
+      "eylf": ["Outcome 4 (Learning)", "Outcome 5 (Communication)"],
+      "evaluation": "Simple melody enables part-singing, supporting attention, turn-taking, and pitch. Multilingual verses promote pride and peer-led teaching.",
+      "reference": "Traditional. (n.d.). Frère Jacques [Song]. Public domain.",
+      "media": {"type":"image","url":"assets/fj-placeholder.jpg","alt":"Frère Jacques placeholder"}
+    },
+    {
+      "title": "Resham Firiri (Nepal, folk)",
+      "mode": "Music",
+      "age": "4–8",
+      "culture": "Nepal",
+      "type": "Song / Folk dance",
+      "inclusion": ["Cultural pride", "Movement + song", "Community"],
+      "howto": ["Model simple side-steps and claps", "Show Nepal on a map; introduce traditional instruments"],
+      "adaptations": ["Slower tempo; picture sequence of steps", "Use scarves for sensory comfort"],
+      "eylf": ["Outcome 2 (Community)", "Outcome 3 (Wellbeing)"],
+      "evaluation": "Celebrates Nepali heritage and introduces pentatonic folk style. Combines movement and song to support regulation, cohesion, and identity.",
+      "reference": "Traditional Nepali folk. (n.d.). Resham Firiri [Song]. Recording link.",
+      "media": {"type":"image","url":"assets/resham-placeholder.jpg","alt":"Resham Firiri placeholder"}
+    },
+    {
+      "title": "Che Che Kule (Ghana, call-and-response)",
+      "mode": "Music",
+      "age": "3–7",
+      "culture": "Ghana",
+      "type": "Song / Game",
+      "inclusion": ["Call-and-response", "Non-verbal joining", "Leadership"],
+      "howto": ["Teacher calls; class responds with echo + actions", "Rotate leaders to empower shy children"],
+      "adaptations": ["Action cards; quieter space for sensory-sensitive learners"],
+      "eylf": ["Outcome 1 (Identity)", "Outcome 5 (Communication)"],
+      "evaluation": "Echo structure scaffolds participation for EAL/D learners. Builds auditory attention, rhythm, self-efficacy, and leadership.",
+      "reference": "Traditional Ghanaian. (n.d.). Che Che Kule [Song].",
+      "media": {"type":"image","url":"assets/cheche-placeholder.jpg","alt":"Che Che Kule placeholder"}
+    },
+    {
+      "title": "Māori Poi Actions (Aotearoa NZ)",
+      "mode": "Dance & Movement",
+      "age": "4–8",
+      "culture": "Aotearoa New Zealand",
+      "type": "Movement / Actions",
+      "inclusion": ["Culturally responsive", "Bilateral coordination", "Respectful practice"],
+      "howto": ["Use soft poi (or paper balls on string) to mirror simple patterns in counts of 4", "Discuss origins and practice with respect"],
+      "adaptations": ["Scarves for softer input; seated option", "Reduce repetitions"],
+      "eylf": ["Outcome 2 (Community)", "Outcome 3 (Wellbeing)"],
+      "evaluation": "Poi patterns foster bilateral coordination and rhythm while centering cultural respect. Visual modelling aids diverse learners.",
+      "reference": "[Org]. (Year). Intro to poi actions [Video/Guide].",
+      "media": {"type":"image","url":"assets/poi-placeholder.jpg","alt":"Poi actions placeholder"}
+    },
+    {
+      "title": "Bollywood-Inspired Freeze Dance",
+      "mode": "Dance & Movement",
+      "age": "3–7",
+      "culture": "India / Global pop",
+      "type": "Movement game",
+      "inclusion": ["Gender-inclusive", "Joyful cardio", "Executive function"],
+      "howto": ["Play kid-friendly Bollywood music; dance and freeze on pause", "Invite a cultural signature pose"],
+      "adaptations": ["Headphones corner", "Visual cue cards for freeze/go/slow"],
+      "eylf": ["Outcome 3 (Wellbeing)", "Outcome 4 (Learning)"],
+      "evaluation": "High engagement movement; freeze cues support inhibition control and self-regulation. Cultural poses foster pride and peer learning.",
+      "reference": "[Artist]. (Year). Bollywood kids dance music [Audio/Video].",
+      "media": {"type":"image","url":"assets/bollywood-placeholder.jpg","alt":"Bollywood dance placeholder"}
+    },
+    {
+      "title": "West African Drum-Along (Djembe Patterns)",
+      "mode": "Dance & Movement",
+      "age": "5–8",
+      "culture": "West Africa",
+      "type": "Body percussion / Drumming",
+      "inclusion": ["Non-verbal participation", "Rhythm literacy", "Teamwork"],
+      "howto": ["Learn 3 patterns: bass-tone-slap (or lap-clap-snap)", "Layer ostinatos in small groups"],
+      "adaptations": ["Body percussion for noise sensitivity", "Soft pads for hands"],
+      "eylf": ["Outcome 4 (Learning)", "Outcome 5 (Communication)"],
+      "evaluation": "Group polyrhythms develop listening, turn-taking and patterning (maths links).",
+      "reference": "[Facilitator/Org]. (Year). Beginner djembe patterns [Video].",
+      "media": {"type":"image","url":"assets/djembe-placeholder.jpg","alt":"Djembe patterns placeholder"}
+    },
+    {
+      "title": "Respectful ‘Sway & Paddle’ (Torres Strait-inspired)",
+      "mode": "Dance & Movement",
+      "age": "3–6",
+      "culture": "Torres Strait (acknowledgement)",
+      "type": "Guided movement",
+      "inclusion": ["First Nations acknowledgement", "Sensory-friendly"],
+      "howto": ["Model gentle swaying/paddling to ambient music with acknowledgement of Country", "Emphasise listening and respect (not replicating sacred dances)"],
+      "adaptations": ["Very slow tempo; soft lighting", "Seated/standing options"],
+      "eylf": ["Outcome 2 (Community)", "Outcome 1 (Identity)"],
+      "evaluation": "Calm routine for regulation; embeds daily acknowledgement; emphasises respect, place and listening.",
+      "reference": "[Aust. cultural org/school]. (Year). Introductory movement inspired by Torres Strait storytelling [Guide].",
+      "media": {"type":"image","url":"assets/ts-placeholder.jpg","alt":"Torres Strait-inspired movement placeholder"}
+    },
+    {
+      "title": "Feelings Charades (Emotion Literacy)",
+      "mode": "Drama",
+      "age": "3–7",
+      "culture": "Universal",
+      "type": "Drama game",
+      "inclusion": ["EAL/D-friendly", "Neurodiversity-friendly"],
+      "howto": ["Act out simple emotions with body/face; peers guess using emotion cards"],
+      "adaptations": ["Provide visual emotion cards", "Allow partner acting; provide a quiet corner"],
+      "eylf": ["Outcome 3 (Wellbeing)", "Outcome 5 (Communication)"],
+      "evaluation": "Builds vocabulary and self-regulation through embodied expression; supports perspective-taking and empathy.",
+      "reference": "Mindful Schools. (2021). Feelings charades for early years [Lesson idea]. https://www.mindfulschools.org",
+      "media": {"type":"image","url":"assets/charades-placeholder.jpg","alt":"Feelings charades placeholder"}
+    },
+    {
+      "title": "Multilingual Market Role-Play",
+      "mode": "Drama",
+      "age": "4–8",
+      "culture": "Multilingual classroom",
+      "type": "Dramatic play",
+      "inclusion": ["Multilingual signage", "Real-world maths/literacy"],
+      "howto": ["Set up a pretend market with labels in English + home languages", "Roles: greeter, cashier, shopper; use picture exchange for non-readers"],
+      "adaptations": ["Visual price tags; noise meter", "Small groups"],
+      "eylf": ["Outcome 2 (Community)", "Outcome 5 (Communication)"],
+      "evaluation": "Purposeful language use across languages; turn-taking, numeracy, and social negotiation in an authentic scenario.",
+      "reference": "[Author/Org]. (Year). Multilingual dramatic play: Market [Guide].",
+      "media": {"type":"image","url":"assets/market-placeholder.jpg","alt":"Multilingual market role-play placeholder"}
+    },
+    {
+      "title": "Story Stones (Open-ended prompts)",
+      "mode": "Drama",
+      "age": "3–8",
+      "culture": "Universal",
+      "type": "Props-based storytelling",
+      "inclusion": ["Choice-based", "AAC-friendly"],
+      "howto": ["Children pick 2–3 stones (image prompts) and act/tell a story", "Peers add sound effects/body percussion"],
+      "adaptations": ["Use large, high-contrast images", "Offer picture symbols/AAC to support narration"],
+      "eylf": ["Outcome 4 (Learning)", "Outcome 5 (Communication)"],
+      "evaluation": "Open-ended prompts reduce language pressure and invite diverse participation; integrates sound, movement and narrative sequencing.",
+      "reference": "[Author/Org]. (Year). Story stones for early years [Guide].",
+      "media": {"type":"image","url":"assets/storystones-placeholder.jpg","alt":"Story stones placeholder"}
+    },
+    {
+      "title": "Puppets Around the World (DIY)",
+      "mode": "Drama",
+      "age": "3–8",
+      "culture": "Global",
+      "type": "Puppet-making & performance",
+      "inclusion": ["Low cost", "Fine-motor", "Voice & role-play"],
+      "howto": ["Create simple puppets (socks/paper bags) with costumes from diverse cultures", "Perform short scenes about friendship and belonging"],
+      "adaptations": ["Pre-cut shapes; tactile materials", "Small-group rehearsal spaces"],
+      "eylf": ["Outcome 1 (Identity)", "Outcome 5 (Communication)"],
+      "evaluation": "Hands-on making plus performance supports identity expression, storytelling and social confidence with accessible materials.",
+      "reference": "[Author/Org]. (Year). DIY multicultural puppets [Guide].",
+      "media": {"type":"image","url":"assets/puppets-placeholder.jpg","alt":"Puppets around the world placeholder"}
+    }
+  ],
+  "reflection": "Through curating this portfolio, I learned how performing arts powerfully support inclusion, identity and emotional expression in early childhood. I am most confident leading dance and music experiences because I enjoy rhythm and group energy. Drama activities require more planning and confidence, especially when facilitating improvisation. I now see performing arts not as add-ons but as essential pedagogical tools for communication, belonging and self-regulation—particularly for multilingual and neurodiverse learners. Going forward, I will continue to explore songs and dances from my own Nepali background and the cultures represented in my classrooms, and I will keep refining adaptations (visual supports, sensory-friendly pacing, AAC) to ensure that every child can access, participate and flourish.",
+  "references": [
+    "Arthur, L., Beecher, B., Death, E., Dockett, S., & Farmer, S. (2021). Programming and planning in early childhood settings (8th ed.). Cengage Learning.",
+    "DEEWR. (2022). Belonging, being and becoming: The Early Years Learning Framework for Australia (Version 2.0). Australian Government Department of Education.",
+    "Wee Sing. (2011). Hello to all the children of the world [Video]. YouTube. https://www.youtube.com/watch?v=Vf0sF9Y1G2E",
+    "Mindful Schools. (2021). Feelings charades for early years [Lesson idea]. https://www.mindfulschools.org"
+  ]
+}
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
